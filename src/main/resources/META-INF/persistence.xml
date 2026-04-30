@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+
+    <persistence-unit name="NewsWebsiteDB">
+
+        <class>Entities.Video</class>
+        <class>Entities.Category</class>
+        <class>Entities.User</class>
+        <class>Entities.Comment</class>
+        <class>Entities.Favourite</class>
+        <class>Entities.History</class>
+        <class>Entities.RoleUpgradeRequest</class>
+        <class>Entities.AdminAuditLog</class>
+        <class>Entities.Notification</class>
+        <class>Entities.Transaction</class>
+       <class>Entities.CommentLike</class>
+        
+        
+
+        <properties>
+
+            <property name="jakarta.persistence.jdbc.driver"
+                value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+
+            <!-- URL CHUẨN KHÔNG XUỐNG DÒNG -->
+            <property name="jakarta.persistence.jdbc.url"
+                value="jdbc:sqlserver://localhost:1433;databaseName=NewsWebsiteDB;encrypt=false;trustServerCertificate=true" />
+
+            <property name="jakarta.persistence.jdbc.user" value="sa" />
+            <property name="jakarta.persistence.jdbc.password" value="0" />
+
+
+<!--             <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+ -->
+
+        </properties>
+    </persistence-unit>
+</persistence>

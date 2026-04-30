@@ -1,0 +1,15 @@
+# VNPay Configuration
+vnp.tmnCode=YOUR_TMN_CODE
+vnp.hashSecret=YOUR_HASH_SECRET
+
+# Email Configuration
+mail.from=YOUR_EMAIL
+mail.password=YOUR_APP_PASSWORD
+
+# Google OAuth Configuration
+google.clientId=YOUR_GOOGLE_CLIENT_ID
+google.clientSecret=YOUR_GOOGLE_CLIENT_SECRET
+
+# Database Configuration
+db.user=sa
+db.password=YOUR_DB_PASSWORD
