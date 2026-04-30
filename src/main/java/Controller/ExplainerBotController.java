@@ -10,6 +10,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import Utils.ConfigLoader;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,8 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/explainer-bot")
 public class ExplainerBotController extends HttpServlet {
 
-    private static final String API_KEY = "AIzaSyCLrTtteX54D127k5YY8GHyzgPl8RvGpIU"; // Lưu ý: Nên bảo mật API Key này
-    private static final String GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=" + API_KEY;
+    private static final String GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=";
 
     private static final String SYSTEM_INSTRUCTION =
         "Bạn là 'Trợ lý Tin tức Thông minh' của trang báo điện tử. " +
@@ -73,7 +73,8 @@ public class ExplainerBotController extends HttpServlet {
     }
 
     private String callGeminiAPI(String prompt) throws IOException {
-        URL url = new URL(GEMINI_URL);
+        String apiKey = ConfigLoader.get("gemini.apiKey");
+        URL url = new URL(GEMINI_BASE_URL + apiKey);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("POST");
         conn.setRequestProperty("Content-Type", "application/json");

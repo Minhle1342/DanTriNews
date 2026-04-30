@@ -13,3 +13,6 @@ google.clientSecret=YOUR_GOOGLE_CLIENT_SECRET
 # Database Configuration
 db.user=sa
 db.password=YOUR_DB_PASSWORD
+
+# Gemini AI Configuration
+gemini.apiKey=YOUR_GEMINI_API_KEY
